@@ -6,7 +6,6 @@ import { format } from 'date-fns';
 import { db } from '../firebase';
 import { CiWarning, CiCircleCheck } from "react-icons/ci";
 
-// This comment is here so I can make a commit.
 type Product = {
   test_runner: string;
   branch_name: string;
@@ -52,7 +51,7 @@ export default function Home() {
             {Object.keys(test)
               .filter((key) => key !== 'version')
               .map((brand, brandIndex) => (
-                <details key={brandIndex} className="pb-2 border rounded-lg">
+                <details key={brandIndex} className="border rounded-lg my-2">
                   <summary className="font-semibold text-md hover:bg-gray-200 p-4">{brand}</summary>
                   <div className="ml-4 mt-2">
                     {Object.keys(test[brand]).map((product, productIndex) => {
