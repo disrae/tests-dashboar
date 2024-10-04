@@ -45,14 +45,14 @@ export default function Home() {
     <div className="container mx-auto p-8">
       <h1 className="text-2xl font-bold mb-4">Testing Dashboard</h1>
       {tests.map((test, versionIndex) => (
-        <details key={versionIndex} className="border rounded-lg bg-slate-0 shadow-lg my-8">
-          <summary className="font-bold text-lg hover:bg-gray-200 p-4">Version {test.version.replaceAll('_', '.')}</summary>
+        <details key={versionIndex} className="border rounded-lg shadow-lg my-8">
+          <summary className="font-bold text-lg hover:bg-slate-100 p-4">Version {test.version.replaceAll('_', '.')}</summary>
           <div className="ml-4 mt-2">
             {Object.keys(test)
               .filter((key) => key !== 'version')
               .map((brand, brandIndex) => (
                 <details key={brandIndex} className="border rounded-lg my-2 bg-slate-50">
-                  <summary className="font-semibold text-md hover:bg-gray-200 p-4">{brand}</summary>
+                  <summary className="font-semibold text-md hover:bg-slate-100 p-4">{brand}</summary>
                   <div className="ml-4 mt-2">
                     {Object.keys(test[brand]).sort((a, b) => {
                         const timeA = new Date(test[brand][a].time || '').getTime();
@@ -75,7 +75,7 @@ export default function Home() {
                           ${details.status === 'in_progress' ? 'border-orange-400' : 'border-green-500'} \
                           ${bgColor} 
                           rounded-lg`}>
-                          <summary className="flex flex-row justify-between hover:bg-gray-200 p-4 rounded-tl-lg rounded-bl-lg">
+                          <summary className="flex flex-row justify-between hover:bg-slate-100 p-4 rounded-tl-lg rounded-bl-lg">
                             <p className='font-semibold'>{product}</p> {Icon}
                           </summary>
                           <div className="pl-4 py-2 bg-slate-100">
