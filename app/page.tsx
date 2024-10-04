@@ -42,7 +42,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-8">
       <h1 className="text-2xl font-bold mb-4">Testing Dashboard</h1>
       {tests.map((test, versionIndex) => (
         <details key={versionIndex} className="border rounded-lg bg-slate-0 shadow-lg my-8">
