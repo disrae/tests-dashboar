@@ -45,13 +45,13 @@ export default function Home() {
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Testing Dashboard</h1>
       {tests.map((test, versionIndex) => (
-        <details key={versionIndex} className="mb-4 border rounded-lg bg-slate-50 shadow-lg">
+        <details key={versionIndex} className="border rounded-lg bg-slate-0 shadow-lg">
           <summary className="font-bold text-lg hover:bg-gray-200 p-4">Version {test.version.replaceAll('_', '.')}</summary>
           <div className="ml-4 mt-2">
             {Object.keys(test)
               .filter((key) => key !== 'version')
               .map((brand, brandIndex) => (
-                <details key={brandIndex} className="border rounded-lg my-2">
+                <details key={brandIndex} className="border rounded-lg my-2 bg-slate-50">
                   <summary className="font-semibold text-md hover:bg-gray-200 p-4">{brand}</summary>
                   <div className="ml-4 mt-2">
                     {Object.keys(test[brand]).map((product, productIndex) => {
