@@ -78,7 +78,7 @@ export default function Home() {
                           <summary className="flex flex-row justify-between hover:bg-gray-200 p-4 rounded-tl-lg rounded-bl-lg">
                             <p className='font-semibold'>{product}</p> {Icon}
                           </summary>
-                          <div className="ml-4 py-2">
+                          <div className="pl-4 py-2 bg-slate-100">
                             <p><span className='font-semibold pr-1'>Test Runner:</span> {details.test_runner}</p>
                             <p><span className='font-semibold pr-1'>Status:</span> {details.status}</p>
                             <p><span className='font-semibold pr-1'>Branch Name:</span> {details.branch_name}</p>
