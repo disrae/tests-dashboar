@@ -54,7 +54,11 @@ export default function Home() {
                 <details key={brandIndex} className="border rounded-lg my-2 bg-slate-50">
                   <summary className="font-semibold text-md hover:bg-gray-200 p-4">{brand}</summary>
                   <div className="ml-4 mt-2">
-                    {Object.keys(test[brand]).map((product, productIndex) => {
+                    {Object.keys(test[brand]).sort((a, b) => {
+                        const timeA = new Date(test[brand][a].time || '').getTime();
+                        const timeB = new Date(test[brand][b].time || '').getTime();
+                        return timeA - timeB;
+                      }).map((product, productIndex) => {
                       const details = test[brand][product];
                       const time = details.time || '';
                       const formattedTime = time ? format(new Date(time), 'PPpp') : '';
