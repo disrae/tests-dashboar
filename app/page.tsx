@@ -42,7 +42,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="container mx-auto p-8">
+    <div className="container mx-auto md:p-8 max-w-2xl">
       <h1 className="text-2xl font-bold mb-4">Testing Dashboard</h1>
       {tests.map((test, versionIndex) => (
         <details key={versionIndex} className="border rounded-lg shadow-lg my-8">
@@ -75,10 +75,16 @@ export default function Home() {
                           ${details.status === 'in_progress' ? 'border-orange-400' : 'border-green-500'} \
                           ${bgColor} 
                           rounded-lg`}>
-                          <summary className="flex flex-row justify-between hover:bg-slate-100 p-4 rounded-tl-lg rounded-bl-lg">
-                            <p className='flex flex-1 justify-between'>{product} <span className='pr-4 font-normal'>{formattedTime}</span></p> {Icon}
+                          <summary className="flex flex-col sm:flex-row justify-between hover:bg-slate-100 p-4 rounded-tl-lg rounded-bl-lg ">
+                            <p className='flex flex-wrap justify-between'>
+                              {product} 
+                            </p>
+                            <div className='flex flex-1 sm:flex-none sm:justify-between '>
+                            <p className='flex flex-1 sm:flex-none pr-4'>{formattedTime}</p>
+                             {Icon}
+                             </div>
                           </summary>
-                          <div className="pl-4 py-2 bg-slate-100 border">
+                          <div className="pl-4 py-2 bg-slate-100 ">
                             <p><span className='pr-1'>Test Runner:</span> {details.test_runner}</p>
                             <p><span className='pr-1'>Status:</span> {details.status}</p>
                             <p><span className='pr-1'>Branch Name:</span> {details.branch_name}</p>
