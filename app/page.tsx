@@ -34,7 +34,7 @@ export default function Home() {
           version: doc.id,
         };
       });
-      console.log(JSON.stringify({ updatedItems }, null, 2));
+      console.log(JSON.stringify(updatedItems, null, 2));
       setTests(updatedItems);
     });
 
