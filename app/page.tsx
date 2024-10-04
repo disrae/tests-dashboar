@@ -42,7 +42,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="container mx-auto py-8 md:p-8 max-w-2xl">
+    <div className="container mx-auto py-8 px-4 md:p-8 max-w-2xl">
       <h1 className="text-2xl font-bold mb-4">Testing Dashboard</h1>
       {tests.map((test, versionIndex) => (
         <details key={versionIndex} className="border rounded-lg shadow-lg my-8">
