@@ -50,6 +50,7 @@ export default function Home() {
           <div className="ml-4 mt-2">
             {Object.keys(test)
               .filter((key) => key !== 'version')
+              .sort((a, b) => b.localeCompare(a))
               .map((brand, brandIndex) => (
                 <details key={brandIndex} className="border rounded-lg my-2 bg-slate-50">
                   <summary className="hover:bg-slate-100 p-4">{brand}</summary>
@@ -89,7 +90,6 @@ export default function Home() {
                             <p><span className='pr-1'>Status:</span> {details.status}</p>
                             <p><span className='pr-1'>Branch Name:</span> {details.branch_name}</p>
                             <p><span className='pr-1'>Test Account:</span> {details.account}</p>
-                            <p><span className='pr-1'>Time:</span> {formattedTime}</p>
                           </div>
                         </details>
                       )
